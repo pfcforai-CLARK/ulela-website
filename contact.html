@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | ULELA</title>
-  <meta name="description" content="Contact ULELA for inquiries, OEM/ODM cooperation and product catalog." />
+  <title>Contact Us | ULELA</title>
+  <meta name="description" content="Contact ULELA for catalog, quotation and OEM/ODM cooperation. Reach Lisa at lisa@ulelaglass.com or WhatsApp +8613691648395." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,7 +13,14 @@
       <a href="index.html" class="logo">ULELA</a>
       <nav>
         <a href="about.html">About</a>
-        <a href="products.html">Products</a>
+        <span class="nav-item">
+          <a href="products.html">Products</a>
+          <div class="nav-dropdown">
+            <a href="glass-for-mobile-phones.html">Glass for Mobile Phones</a>
+            <a href="lens-protector.html">Lens Protector</a>
+            <a href="glass-for-tablet.html">Glass for Tablet</a>
+          </div>
+        </span>
         <a href="catalog.html">Catalog</a>
         <a href="contact.html" class="active">Contact</a>
       </nav>
@@ -23,26 +30,132 @@
   <section class="page-hero">
     <div class="container">
       <h1>Contact Us</h1>
-      <p>Get in touch for catalog, quotation and OEM/ODM cooperation.</p>
+      <p>Get in touch for product catalog, quotation and OEM/ODM cooperation.</p>
     </div>
   </section>
 
   <section class="section">
-    <div class="container two-col">
-      <div>
+    <div class="container contact-page-grid">
+
+      <!-- Left: Contact Info -->
+      <div class="contact-info-col">
         <h2>Contact Information</h2>
-        <ul class="contact-list">
-          <li><strong>Company:</strong> ULELA</li>
-          <li><strong>Website:</strong> www.ulelaglass.com</li>
-          <li><strong>Email:</strong> sales@ulelaglass.com</li>
-          <li><strong>WhatsApp:</strong> +86 XXX XXXX XXXX</li>
-          <li><strong>Address:</strong> Dongguan, China</li>
-        </ul>
+
+        <!-- Contact Person Card -->
+        <div class="contact-person-card">
+          <div class="person-top">
+            <div class="person-avatar">L</div>
+            <div class="person-meta">
+              <h3>Lisa</h3>
+              <p class="person-title">Sales Manager</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <a href="https://wa.me/8613691648395" target="_blank">+86 136 9164 8395</a>
+              <span style="color:var(--muted); font-size:13px; display:block;">WhatsApp available</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <a href="mailto:lisa@ulelaglass.com">lisa@ulelaglass.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Company Details -->
+        <div class="company-details">
+          <h3>Company Details</h3>
+          <div class="contact-item">
+            <div class="contact-icon">🏢</div>
+            <div><strong>ULELA</strong></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🌐</div>
+            <div>
+              <a href="https://www.ulelaglass.com" target="_blank">www.ulelaglass.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <a href="mailto:lisa@ulelaglass.com">lisa@ulelaglass.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <a href="https://wa.me/8613691648395" target="_blank">+86 136 9164 8395 (WhatsApp)</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>Dongguan, Guangdong, China</div>
+          </div>
+        </div>
+
+        <!-- Google Map -->
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d476476.05791760556!2d113.4710064!3d23.020673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3402f096b3a31a05%3A0x2f3f3b8c97b0a5d3!2sDongguan%2C%20Guangdong%2C%20China!5e0!3m2!1sen!2sus!4v1700000000000"
+            width="100%"
+            height="220"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Dongguan, Guangdong, China">
+          </iframe>
+        </div>
       </div>
 
-      <div class="card">
-        <img src="images/contact-placeholder.jpg" alt="Contact image placeholder" />
+      <!-- Right: Inquiry Form -->
+      <div class="contact-form-col">
+        <h2>Send an Inquiry</h2>
+        <div class="inquiry-form">
+          <form action="mailto:lisa@ulelaglass.com" method="get" enctype="text/plain">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Name <span style="color:#e53e3e;">*</span></label>
+                <input type="text" id="contact-name" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email <span style="color:#e53e3e;">*</span></label>
+                <input type="email" id="contact-email" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-company">Company</label>
+                <input type="text" id="contact-company" name="company" placeholder="Your company name" />
+              </div>
+              <div class="form-group">
+                <label for="contact-whatsapp">WhatsApp / Phone</label>
+                <input type="text" id="contact-whatsapp" name="whatsapp" placeholder="+1 234 567 8901" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" name="subject" placeholder="e.g. Inquiry: HD Silkprint 2X" />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message <span style="color:#e53e3e;">*</span></label>
+              <textarea id="contact-message" name="message" placeholder="Please describe the products you are interested in, your target quantity, market, and any other requirements..." required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary">Send Inquiry</button>
+            </div>
+          </form>
+          <p style="margin-top:14px; font-size:13px; color:var(--muted);">
+            You can also reach us directly:<br />
+            📧 <a href="mailto:lisa@ulelaglass.com" style="color:var(--blue);">lisa@ulelaglass.com</a> &nbsp;|&nbsp;
+            💬 <a href="https://wa.me/8613691648395" target="_blank" style="color:var(--blue);">WhatsApp +86 136 9164 8395</a>
+          </p>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -52,7 +165,29 @@
         <div class="logo footer-logo">ULELA</div>
         <p>Professional screen protector solutions for phones, tablets and camera lenses.</p>
       </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="glass-for-mobile-phones.html">Glass for Mobile Phones</a></li>
+          <li><a href="lens-protector.html">Lens Protector</a></li>
+          <li><a href="glass-for-tablet.html">Glass for Tablet</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: <a href="mailto:lisa@ulelaglass.com">lisa@ulelaglass.com</a></li>
+          <li>Website: <a href="https://www.ulelaglass.com" target="_blank">www.ulelaglass.com</a></li>
+          <li>WhatsApp: <a href="https://wa.me/8613691648395" target="_blank">+86 136 9164 8395</a></li>
+          <li>Address: Dongguan, Guangdong, China</li>
+        </ul>
+      </div>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
