@@ -273,22 +273,33 @@ h4 {
   background: linear-gradient(135deg, #0b326d 0%, #0f4aa3 100%);
   color: white;
   border-radius: 24px;
-  padding: 42px 48px;
+  padding: 60px 48px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 26px;
+  text-align: center;
   box-shadow: 0 18px 40px rgba(11, 50, 109, 0.22);
 }
 
 .cta-box h2 {
   color: #fff;
-  margin-bottom: 10px;
+  margin: 0 0 12px;
+  font-size: clamp(32px, 4vw, 40px);
 }
 
 .cta-box p {
   margin: 0;
   color: rgba(255, 255, 255, 0.88);
+  max-width: 680px;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .cta .btn-primary {
@@ -422,7 +433,7 @@ h4 {
   }
 
   .cta-box {
-    display: block;
+    padding: 48px 32px;
   }
 
   h1 {
@@ -1243,7 +1254,7 @@ h4 {
 
 .stats-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   margin: 22px 0 28px;
 }
@@ -1254,6 +1265,10 @@ h4 {
   background: #fff;
   padding: 18px 16px;
   box-shadow: 0 10px 24px rgba(15, 74, 163, 0.08);
+  min-height: 108px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .stat-box strong {
@@ -1273,6 +1288,7 @@ h4 {
 .category-highlight-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -1285,6 +1301,9 @@ h4 {
   background: #fff;
   padding: 24px;
   border-bottom: 1px solid #edf2f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .category-highlight-card img {
@@ -1297,6 +1316,8 @@ h4 {
   padding: 18px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 10px;
   flex-grow: 1;
 }
@@ -1308,6 +1329,8 @@ h4 {
 .link-arrow {
   color: var(--blue);
   font-weight: 700;
+  display: inline-flex;
+  margin-top: auto;
 }
 
 .why-choose-section {
@@ -1347,12 +1370,19 @@ h4 {
 
 .production-process-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
 }
 
 .production-card {
   position: relative;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #dfe8f7;
+  box-shadow: 0 10px 24px rgba(15, 74, 163, 0.09);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -1363,23 +1393,25 @@ h4 {
 
 .process-card-number {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 12px;
+  left: 12px;
   z-index: 2;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--blue);
+  background: #0f4aa3;
   color: #fff;
   font-weight: 700;
-  box-shadow: 0 10px 20px rgba(11, 50, 109, 0.24);
+  font-size: 13px;
+  box-shadow: 0 8px 18px rgba(11, 50, 109, 0.26);
 }
 
 .production-process-media {
   margin: 0;
+  position: relative;
   overflow: hidden;
 }
 
@@ -1395,7 +1427,17 @@ h4 {
 }
 
 .production-process-content {
-  padding: 18px;
+  margin-top: auto;
+  padding: 14px 16px;
+  text-align: center;
+  background: #f8fbff;
+  border-top: 1px solid #e2ecfb;
+}
+
+.production-process-content h3 {
+  font-size: 17px;
+  color: #0d2347;
+  font-weight: 700;
 }
 
 .process-section {
@@ -1644,11 +1686,11 @@ h4 {
   }
 
   .stats-row {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .production-process-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .step:not(:last-child)::after {
@@ -1698,8 +1740,6 @@ h4 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .stats-row,
-  .production-process-grid,
   .process-steps {
     grid-template-columns: 1fr;
   }
@@ -1708,9 +1748,42 @@ h4 {
     height: 210px;
   }
 
+  .cta-box {
+    padding: 42px 20px;
+  }
+
+  .cta-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .floating-contact {
     top: auto;
     bottom: 14px;
     transform: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .production-process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .production-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-row,
+  .production-process-grid {
+    grid-template-columns: 1fr;
   }
 }
