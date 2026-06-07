@@ -217,7 +217,10 @@
     var interval = parseInt(carousel.getAttribute('data-interval'), 10) || 4000;
     var timer;
 
-    if (slides.length <= 1) return;
+    if (slides.length <= 1 || !dotsWrap || !nextBtn || !prevBtn) {
+      carousel.classList.add('hero-static');
+      return;
+    }
 
     function renderDots() {
       dotsWrap.innerHTML = '';

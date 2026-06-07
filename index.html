@@ -11,9 +11,8 @@
   <header class="site-header"></header>
 
   <section class="hero-banner">
-    <div class="hero-carousel" data-interval="4500">
-      <div class="hero-slide active" style="background-image: linear-gradient(rgba(11,50,109,0.55), rgba(13,35,71,0.62)), url('banner-1.jpg');"></div>
-      <div class="hero-slide" style="background-image: linear-gradient(rgba(11,50,109,0.55), rgba(13,35,71,0.62)), url('banner-2.jpg');"></div>
+    <div class="hero-carousel hero-static">
+      <div class="hero-slide active" style="background-image: linear-gradient(rgba(11,50,109,0.62), rgba(13,35,71,0.45)), url('banner-1.jpg');"></div>
       <div class="hero-content container">
         <p class="eyebrow">OEM / ODM Screen Protector Factory</p>
         <h1>Your Trusted Screen Protector Manufacturer</h1>
@@ -26,9 +25,6 @@
           <a class="btn btn-outline-light" href="products.html">View Products</a>
         </div>
       </div>
-      <button class="carousel-arrow prev" type="button" aria-label="Previous banner">‹</button>
-      <button class="carousel-arrow next" type="button" aria-label="Next banner">›</button>
-      <div class="carousel-dots" aria-label="Banner indicators"></div>
     </div>
     <div class="hero-badges container">
       <div class="hero-badge">⚙️ OEM / ODM</div>
@@ -49,9 +45,10 @@
           we deliver consistent quality, flexible OEM/ODM and reliable global supply.
         </p>
         <div class="stats-row">
-          <div class="stat-box"><strong>Since 2016</strong><span>Founded</span></div>
-          <div class="stat-box"><strong>24</strong><span>Product Series</span></div>
-          <div class="stat-box"><strong>100%</strong><span>Quality Inspection</span></div>
+          <div class="stat-box"><strong>Since 2016</strong><span>Established</span></div>
+          <div class="stat-box"><strong>1,700㎡</strong><span>Factory Area</span></div>
+          <div class="stat-box"><strong>1.5M+</strong><span>Monthly Output</span></div>
+          <div class="stat-box"><strong>50+</strong><span>Countries Served</span></div>
         </div>
         <a class="btn btn-primary" href="about.html">More About Us →</a>
       </div>
@@ -70,7 +67,9 @@
       </div>
       <div class="grid cards-3 category-highlight-grid">
         <article class="card category-highlight-card">
-          <img src="hd-silkprint-2x.jpg" alt="Glass For Mobile Phones" />
+          <div class="category-highlight-media">
+            <img src="category-mobile.jpg" alt="Glass For Mobile Phones" />
+          </div>
           <div class="category-highlight-content">
             <h3>Glass For Mobile Phones</h3>
             <p>HD Silkprint, Privacy, Ultrasonic Unlock, Magic Kit &amp; Super Strong series.</p>
@@ -78,7 +77,9 @@
           </div>
         </article>
         <article class="card category-highlight-card">
-          <img src="ar-armour-lens-protector.jpg" alt="Lens Protector" />
+          <div class="category-highlight-media">
+            <img src="category-lens.jpg" alt="Lens Protector" />
+          </div>
           <div class="category-highlight-content">
             <h3>Lens Protector</h3>
             <p>Silkprint &amp; AR armour/alloy camera lens protectors.</p>
@@ -86,7 +87,9 @@
           </div>
         </article>
         <article class="card category-highlight-card">
-          <img src="tablet-hd.jpg" alt="Glass For Tablet" />
+          <div class="category-highlight-media">
+            <img src="category-tablet.jpg" alt="Glass For Tablet" />
+          </div>
           <div class="category-highlight-content">
             <h3>Glass For Tablet</h3>
             <p>HD glass &amp; Magic Kit solutions for tablets.</p>
@@ -102,20 +105,82 @@
       <div class="section-title">
         <p class="eyebrow">WHY CHOOSE ULELA</p>
         <h2>Your Reliable Manufacturing Partner</h2>
+        <p>Factory strength, flexible service and stable quality for long-term OEM/ODM cooperation.</p>
       </div>
       <div class="grid cards-3 why-grid">
-        <div class="why-card"><h3>Factory Direct</h3><p>Direct factory pricing with no middleman markup.</p></div>
-        <div class="why-card"><h3>Stable Quality</h3><p>Standardized production with full-process quality control.</p></div>
-        <div class="why-card"><h3>Ample Stock</h3><p>Ready stock for popular models and fast dispatch.</p></div>
-        <div class="why-card"><h3>Low MOQ</h3><p>Flexible order quantities — trial orders welcome.</p></div>
-        <div class="why-card"><h3>Strict QC</h3><p>100% inspection on every production batch.</p></div>
-        <div class="why-card"><h3>OEM / ODM</h3><p>Custom logo, packaging and product development.</p></div>
+        <div class="why-card"><span class="why-icon">🏭</span><h3>Factory Direct</h3><p>Direct factory pricing with no middleman markup.</p></div>
+        <div class="why-card"><span class="why-icon">📏</span><h3>Stable Quality</h3><p>Standardized production with full-process quality control.</p></div>
+        <div class="why-card"><span class="why-icon">📦</span><h3>Ample Stock</h3><p>Ready stock for popular models and fast dispatch.</p></div>
+        <div class="why-card"><span class="why-icon">🤝</span><h3>Low MOQ</h3><p>Flexible order quantities — trial orders welcome.</p></div>
+        <div class="why-card"><span class="why-icon">🔎</span><h3>Strict QC</h3><p>100% inspection on every production batch.</p></div>
+        <div class="why-card"><span class="why-icon">🛠️</span><h3>OEM / ODM</h3><p>Custom logo, packaging and product development.</p></div>
       </div>
-      <div class="factory-wall">
-        <figure><img src="factory-1.jpg" alt="CNC Cutting" /><figcaption>CNC Cutting</figcaption></figure>
-        <figure><img src="factory-2.jpg" alt="Silk Printing" /><figcaption>Silk Printing</figcaption></figure>
-        <figure><img src="factory-3.jpg" alt="Lamination" /><figcaption>Lamination</figcaption></figure>
-        <figure><img src="factory-4.jpg" alt="Laser Cutting" /><figcaption>Laser Cutting</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section production-process-section">
+    <div class="container">
+      <div class="section-title">
+        <p class="eyebrow">OUR FACTORY</p>
+        <h2>Our Production Process</h2>
+        <p>A complete in-house production chain — from raw glass cutting to final packaging — backed by a 1,700㎡ facility with 1.5M+ pcs monthly capacity.</p>
+      </div>
+      <div class="production-process-grid">
+        <article class="card production-card">
+          <span class="process-card-number">01</span>
+          <figure class="production-process-media"><img src="process-glass-cutting.jpg" alt="Glass Cutting process" /></figure>
+          <div class="production-process-content"><h3>Glass Cutting</h3></div>
+        </article>
+        <article class="card production-card">
+          <span class="process-card-number">02</span>
+          <figure class="production-process-media"><img src="process-cnc.jpg" alt="CNC process" /></figure>
+          <div class="production-process-content"><h3>CNC</h3></div>
+        </article>
+        <article class="card production-card">
+          <span class="process-card-number">03</span>
+          <figure class="production-process-media"><img src="process-polishing.jpg" alt="Polishing process" /></figure>
+          <div class="production-process-content"><h3>Polishing</h3></div>
+        </article>
+        <article class="card production-card">
+          <span class="process-card-number">04</span>
+          <figure class="production-process-media"><img src="process-ultrasonic-cleaning.jpg" alt="Ultrasonic Cleaning process" /></figure>
+          <div class="production-process-content"><h3>Ultrasonic Cleaning</h3></div>
+        </article>
+        <article class="card production-card">
+          <span class="process-card-number">05</span>
+          <figure class="production-process-media"><img src="process-tempering.jpg" alt="Tempering process" /></figure>
+          <div class="production-process-content"><h3>Tempering</h3></div>
+        </article>
+        <article class="card production-card">
+          <span class="process-card-number">06</span>
+          <figure class="production-process-media"><img src="process-laser%20cutting.jpg" alt="Laser Cutting process" /></figure>
+          <div class="production-process-content"><h3>Laser Cutting</h3></div>
+        </article>
+        <article class="card production-card">
+          <span class="process-card-number">07</span>
+          <figure class="production-process-media"><img src="process-laminating.jpg" alt="Laminating process" /></figure>
+          <div class="production-process-content"><h3>Laminating</h3></div>
+        </article>
+        <article class="card production-card">
+          <span class="process-card-number">08</span>
+          <figure class="production-process-media"><img src="process-debubbling.jpg" alt="Debubbling process" /></figure>
+          <div class="production-process-content"><h3>Debubbling</h3></div>
+        </article>
+        <article class="card production-card">
+          <span class="process-card-number">09</span>
+          <figure class="production-process-media"><img src="process-spraying.jpg" alt="Spraying process" /></figure>
+          <div class="production-process-content"><h3>Spraying</h3></div>
+        </article>
+        <article class="card production-card">
+          <span class="process-card-number">10</span>
+          <figure class="production-process-media"><img src="process-qc.jpg" alt="QC process" /></figure>
+          <div class="production-process-content"><h3>QC</h3></div>
+        </article>
+        <article class="card production-card">
+          <span class="process-card-number">11</span>
+          <figure class="production-process-media"><img src="process-packing.jpg" alt="Packing process" /></figure>
+          <div class="production-process-content"><h3>Packing</h3></div>
+        </article>
       </div>
     </div>
   </section>
@@ -123,7 +188,8 @@
   <section class="section process-section">
     <div class="container">
       <div class="section-title">
-        <h2>Simple OEM / ODM Process</h2>
+        <p class="eyebrow">ORDERING FLOW</p>
+        <h2>How to Order — OEM &amp; ODM Process</h2>
       </div>
       <div class="process-steps">
         <div class="step"><span>1</span><p>Inquiry</p></div>
