@@ -88,7 +88,7 @@ h2.title.white{color:#fff}
 .hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;transition:var(--tr)}
 
 /* HERO */
-.hero{position:relative;height:580px;display:flex;align-items:flex-start;overflow:hidden;background:var(--navy)}
+.hero{position:relative;min-height:620px;display:flex;align-items:flex-start;overflow:hidden;background:var(--navy)}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(100deg,rgba(26,62,140,.94) 0%,rgba(26,62,140,.72) 45%,rgba(26,62,140,.38) 100%),url('banner-1.jpg') top center/cover no-repeat}
 .hero-stripe{position:absolute;top:0;right:0;bottom:0;width:40%;background:linear-gradient(135deg,transparent,rgba(37,99,235,.08));clip-path:polygon(20% 0%,100% 0%,100% 100%,0% 100%)}
 .hero-bar{position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(to bottom,var(--blue),transparent)}
@@ -172,14 +172,14 @@ h2.title.white{color:#fff}
 
 /* WHY CHOOSE */
 .why-choose{padding:88px 0;background:var(--navy);position:relative;overflow:hidden}
-.why-choose::before{content:'';position:absolute;top:-100px;right:-100px;width:450px;height:450px;background:radial-gradient(circle,rgba(37,99,235,.1) 0%,transparent 70%);pointer-events:none}
+.why-choose::before{content:'';position:absolute;top:-100px;right:-100px;width:450px;height:450px;background:radial-gradient(circle,rgba(37,99,235,.15) 0%,transparent 70%);pointer-events:none}
 .why-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
-.why-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:26px 22px;transition:var(--tr)}
-.why-item:hover{background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.3)}
-.w-num{font-family:var(--font-head);font-size:10.5px;font-weight:700;letter-spacing:.1em;color:rgba(96,165,250,.5);margin-bottom:10px}
-.w-title{font-family:var(--font-head);font-size:14.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
-.w-desc{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.6}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.why-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--blue-lt);padding:22px 20px;transition:var(--tr);border-radius:4px}
+.why-item:hover{background:rgba(255,255,255,.1);border-left-color:#fff}
+.w-num{font-family:var(--font-head);font-size:10px;font-weight:700;letter-spacing:.12em;color:rgba(147,197,253,.6);margin-bottom:8px}
+.w-title{font-family:var(--font-head);font-size:17px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px;line-height:1.1}
+.w-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6}
 .why-visual img{width:100%;height:460px;object-fit:cover;border-radius:var(--rl);opacity:.9}
 
 /* WHO WE SERVE */
@@ -574,13 +574,13 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
 </div>
 
 <style>
-.cert-bar{background:var(--sky);border-top:1px solid rgba(37,99,235,.12);border-bottom:1px solid rgba(37,99,235,.12);padding:24px 0}
-.cert-bar-inner{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
-.cert-bar-label{font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);white-space:nowrap}
-.cert-items{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
-.cert-item{display:flex;align-items:center;gap:8px}
-.cert-ico{background:var(--navy);color:#fff;font-family:var(--font-head);font-size:11px;font-weight:800;padding:5px 10px;border-radius:4px;letter-spacing:.04em}
-.cert-item span{font-size:13px;color:var(--text-lt);font-weight:500}
+.cert-bar{background:#fff;border-top:1px solid var(--gray-lt);border-bottom:1px solid var(--gray-lt);padding:20px 0;margin-top:0}
+.cert-bar-inner{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.cert-bar-label{font-family:var(--font-head);font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);white-space:nowrap}
+.cert-items{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.cert-item{display:flex;align-items:center;gap:7px}
+.cert-ico{background:var(--navy);color:#fff;font-family:var(--font-head);font-size:10px;font-weight:800;padding:4px 8px;border-radius:3px;letter-spacing:.03em}
+.cert-item span{font-size:12.5px;color:var(--text-lt);font-weight:500}
 </style>
 
 <!-- OUR FACTORY -->
