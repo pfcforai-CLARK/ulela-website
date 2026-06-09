@@ -87,19 +87,19 @@ h2.title.white{color:#fff}
 .hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;transition:var(--tr)}
 
 /* HERO */
-.hero{position:relative;min-height:640px;display:flex;align-items:center;overflow:hidden;background:var(--navy)}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(100deg,rgba(26,62,140,.92) 0%,rgba(26,62,140,.7) 45%,rgba(26,62,140,.35) 100%),url('banner-1.jpg') center/cover no-repeat}
+.hero{position:relative;height:580px;display:flex;align-items:flex-start;overflow:hidden;background:var(--navy)}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(100deg,rgba(26,62,140,.94) 0%,rgba(26,62,140,.72) 45%,rgba(26,62,140,.38) 100%),url('banner-1.jpg') top center/cover no-repeat}
 .hero-stripe{position:absolute;top:0;right:0;bottom:0;width:40%;background:linear-gradient(135deg,transparent,rgba(37,99,235,.08));clip-path:polygon(20% 0%,100% 0%,100% 100%,0% 100%)}
 .hero-bar{position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(to bottom,var(--blue),transparent)}
-.hero .container{position:relative;z-index:2;padding:80px 24px}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,.2);border:1px solid rgba(37,99,235,.4);color:rgba(255,255,255,.9);font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:30px;margin-bottom:20px}
-.hero-tag::before{content:'';width:6px;height:6px;background:var(--blue-lt);border-radius:50%;animation:blink 2s infinite}
+.hero .container{position:relative;z-index:2;padding:52px 24px 0}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:#fff;font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px;border-radius:4px;margin-bottom:18px}
+.hero-tag::before{content:'';width:6px;height:6px;background:#fff;border-radius:50%;animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-family:var(--font-head);font-weight:800;font-size:clamp(34px,5.5vw,62px);line-height:1.0;color:#fff;text-transform:uppercase;letter-spacing:.01em;max-width:660px;margin-bottom:18px}
+.hero h1{font-family:var(--font-head);font-weight:800;font-size:clamp(34px,5.5vw,62px);line-height:1.0;color:#fff;text-transform:uppercase;letter-spacing:.01em;max-width:660px;margin-bottom:16px}
 .hero h1 em{font-style:normal;color:var(--blue-lt)}
-.hero-desc{font-size:16px;color:rgba(255,255,255,.75);max-width:500px;line-height:1.7;margin-bottom:32px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px}
-.hero-stats{display:flex;gap:36px;flex-wrap:wrap;padding-top:36px;border-top:1px solid rgba(255,255,255,.12)}
+.hero-desc{font-size:15.5px;color:rgba(255,255,255,.78);max-width:500px;line-height:1.65;margin-bottom:28px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+.hero-stats{display:flex;gap:36px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,.12)}
 .stat-num{font-family:var(--font-head);font-size:30px;font-weight:800;color:var(--blue-lt);line-height:1}
 .stat-lbl{font-size:11.5px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.07em;margin-top:3px}
 
@@ -135,11 +135,11 @@ h2.title.white{color:#fff}
 .best-selling{padding:88px 0;background:var(--off-white);border-top:1px solid var(--gray-lt)}
 .sec-hdr{text-align:center;margin-bottom:52px}
 .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.prod-card{background:#fff;border-radius:var(--rl);overflow:hidden;border:1px solid var(--gray-lt);transition:var(--tr);cursor:pointer}
+.prod-card{background:#fff;border-radius:var(--rl);overflow:hidden;border:1px solid var(--gray-lt);transition:var(--tr);cursor:pointer;display:block;color:inherit}
 .prod-card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);border-color:var(--blue)}
-.prod-img{position:relative;height:190px;overflow:hidden;background:var(--gray-lt)}
-.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
-.prod-card:hover .prod-img img{transform:scale(1.05)}
+.prod-img{position:relative;height:220px;overflow:hidden;background:var(--off-white);display:flex;align-items:center;justify-content:center}
+.prod-img img{width:100%;height:100%;object-fit:contain;padding:12px;transition:transform .4s ease}
+.prod-card:hover .prod-img img{transform:scale(1.06)}
 .prod-badge{position:absolute;top:10px;left:10px;background:var(--navy);color:#fff;font-family:var(--font-head);font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 10px;border-radius:4px}
 .prod-badge.hot{background:var(--blue)}
 .prod-badge.new{background:#059669}
@@ -148,7 +148,7 @@ h2.title.white{color:#fff}
 .prod-name{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.02em;margin-bottom:6px;line-height:1.25}
 .prod-desc{font-size:12.5px;color:var(--text-lt);line-height:1.55}
 .prod-link{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-head);font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--navy);margin-top:12px;transition:var(--tr)}
-.prod-link:hover{color:var(--blue);gap:9px}
+.prod-card:hover .prod-link{color:var(--blue);gap:9px}
 .prod-link svg{width:13px;height:13px;fill:currentColor}
 
 /* OUR PRODUCTS SERIES */
@@ -193,13 +193,12 @@ h2.title.white{color:#fff}
 
 /* FACTORY */
 .factory{padding:88px 0;background:#fff}
-.factory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:44px;border-radius:var(--rl);overflow:hidden}
-.fac-item{position:relative;height:210px;overflow:hidden;cursor:pointer}
-.fac-item.big{grid-column:span 2;height:423px}
+.factory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:44px;border-radius:var(--rl);overflow:hidden}
+.fac-item{position:relative;height:200px;overflow:hidden;cursor:pointer}
 .fac-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .fac-item:hover img{transform:scale(1.07)}
-.fac-lbl{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(26,62,140,.85) 0%,transparent 100%);padding:18px 14px 12px;font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#fff;transform:translateY(3px);transition:var(--tr)}
-.fac-item:hover .fac-lbl{transform:translateY(0);color:rgba(147,197,253,1)}
+.fac-lbl{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(26,62,140,.88) 0%,transparent 100%);padding:20px 12px 10px;font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#fff;transition:var(--tr)}
+.fac-item:hover .fac-lbl{color:rgba(147,197,253,1)}
 
 /* ORDERING */
 .ordering{padding:88px 0;background:var(--off-white)}
@@ -208,11 +207,11 @@ h2.title.white{color:#fff}
 .step{text-align:center;padding:0 10px;position:relative;z-index:1}
 .step-n{width:60px;height:60px;background:#fff;border:3px solid var(--gray-lt);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:17px;font-weight:800;color:var(--navy);margin:0 auto 18px;transition:var(--tr);box-shadow:var(--sh-sm)}
 .step:hover .step-n{border-color:var(--navy);background:var(--navy);color:#fff;transform:scale(1.1)}
-.step-t{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
-.step-d{font-size:12px;color:var(--gray);line-height:1.5}
+.step-t{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.step-d{font-size:13.5px;color:var(--text-lt);line-height:1.55}
 
 /* CTA */
-.cta-sec{padding:88px 0;background:linear-gradient(135deg,var(--navy) 0%,#1e4db7 100%);position:relative;overflow:hidden;text-align:center}
+.cta-sec{padding:72px 0;background:var(--navy);position:relative;overflow:hidden;text-align:center}
 .cta-sec::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='28' y='28' width='4' height='4' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E") repeat}
 .cta-content{position:relative;z-index:1;max-width:680px;margin:0 auto}
 .cta-sec h2{font-family:var(--font-head);font-size:clamp(26px,4vw,42px);font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.02em;margin-bottom:14px}
@@ -223,14 +222,19 @@ h2.title.white{color:#fff}
 .cta-info-item svg{width:14px;height:14px;fill:rgba(147,197,253,.8);flex-shrink:0}
 
 /* FOOTER */
-footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:64px 0 0;color:rgba(255,255,255,.6);font-size:13.5px}
+footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(255,255,255,.6);font-size:13.5px}
 .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08)}
 .f-logo{font-family:var(--font-head);font-size:26px;font-weight:800;letter-spacing:.07em;color:#fff;text-transform:uppercase;margin-bottom:14px}
 .f-about{line-height:1.7;margin-bottom:20px;font-size:13px}
 .f-socials{display:flex;gap:8px;flex-wrap:wrap}
-.soc-btn{width:34px;height:34px;background:rgba(255,255,255,.07);border-radius:var(--r);display:flex;align-items:center;justify-content:center;transition:var(--tr)}
-.soc-btn:hover{background:var(--blue)}
-.soc-btn svg{width:15px;height:15px;fill:#fff}
+.soc-btn{width:36px;height:36px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;transition:var(--tr)}
+.soc-btn:hover{opacity:.85;transform:translateY(-2px)}
+.soc-btn svg{width:36px;height:36px}
+.soc-btn.linkedin{background:#0A66C2}
+.soc-btn.facebook{background:#1877F2}
+.soc-btn.instagram{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
+.soc-btn.whatsapp{background:#25D366}
+.soc-btn svg path{fill:#fff}
 .f-head{font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:18px}
 .f-links{display:flex;flex-direction:column;gap:9px}
 .f-links a{color:rgba(255,255,255,.5);transition:var(--tr);font-size:13px}
@@ -247,8 +251,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
 /* RESPONSIVE */
 @media(max-width:1024px){
   .prod-grid{grid-template-columns:repeat(2,1fr)}
-  .factory-grid{grid-template-columns:repeat(2,1fr)}
-  .fac-item.big{grid-column:span 2;height:280px}
+  .factory-grid{grid-template-columns:repeat(3,1fr)}
   .footer-inner{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
@@ -272,8 +275,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
 }
 @media(max-width:480px){
   .prod-grid{grid-template-columns:1fr}
-  .factory-grid{grid-template-columns:1fr}
-  .fac-item.big{grid-column:span 1;height:210px}
+  .factory-grid{grid-template-columns:repeat(2,1fr)}
   .trustbar .container{grid-template-columns:1fr}
   .trust-item{border-right:none;border-bottom:1px solid var(--gray-lt)}
 }
@@ -410,42 +412,42 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
       <p class="sub" style="margin:0 auto">Our most popular SKUs trusted by distributors and retailers worldwide.</p>
     </div>
     <div class="prod-grid">
-      <div class="prod-card fade-up">
-        <div class="prod-img"><img src="ultrasonic-unlock-glass.jpg" alt="Ultrasonic Unlock Glass"><span class="prod-badge">Best Seller</span></div>
+      <a href="ultrasonic-unlock-glass.html" class="prod-card fade-up">
+        <div class="prod-img"><img src="product-ultrasonic-unlock.jpg" alt="Ultrasonic Unlock Glass"><span class="prod-badge">Best Seller</span></div>
         <div class="prod-body">
           <div class="prod-cat">Privacy Glass · Phone</div>
           <div class="prod-name">Ultrasonic Unlock Privacy Glass</div>
           <div class="prod-desc">Compatible with under-screen fingerprint sensors. Samsung S series. Drop test: 64G, 1M, 3 times no break.</div>
-          <a href="products.html" class="prod-link">View Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></a>
+          <span class="prod-link">View Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span>
         </div>
-      </div>
-      <div class="prod-card fade-up">
-        <div class="prod-img"><img src="hd-silkprint-2x.jpg" alt="HD Silkprint 2X"><span class="prod-badge hot">Hot</span></div>
+      </a>
+      <a href="hd-silkprint-2x.html" class="prod-card fade-up">
+        <div class="prod-img"><img src="product-hd-silkprint.jpg" alt="HD Silkprint 2X"><span class="prod-badge hot">Hot</span></div>
         <div class="prod-body">
           <div class="prod-cat">HD Glass · Phone</div>
           <div class="prod-name">HD Silkprint 2X Tempered Glass</div>
-          <div class="prod-desc">2.5D silkprint full-glue tempered glass. Crystal-clear HD with precise edge fit. Available in BlackKing, Gorilla BP versions.</div>
-          <a href="products.html" class="prod-link">View Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></a>
+          <div class="prod-desc">2.5D silkprint full-glue tempered glass. Crystal-clear HD. Available in BlackKing, Gorilla BP, White BP versions.</div>
+          <span class="prod-link">View Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span>
         </div>
-      </div>
-      <div class="prod-card fade-up">
-        <div class="prod-img"><img src="ar-alloy-lens-protector.jpg" alt="AR Alloy Lens Protector"><span class="prod-badge new">New</span></div>
+      </a>
+      <a href="ar-alloy-lens-protector.html" class="prod-card fade-up">
+        <div class="prod-img"><img src="product-ar-lens.jpg" alt="AR Alloy Lens Protector"><span class="prod-badge new">New</span></div>
         <div class="prod-body">
           <div class="prod-cat">Lens Protector</div>
           <div class="prod-name">AR Alloy Lens Protector</div>
-          <div class="prod-desc">AR anti-reflection alloy frame lens protector. Transmittance 95.5% standard / 99.5% premium. AF Shin-Etsu coating.</div>
-          <a href="lens-protector.html" class="prod-link">View Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></a>
+          <div class="prod-desc">AR anti-reflection alloy frame. Transmittance 95.5% standard / 99.5% premium. AF Shin-Etsu 10,000 times coating.</div>
+          <span class="prod-link">View Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span>
         </div>
-      </div>
-      <div class="prod-card fade-up">
-        <div class="prod-img"><img src="magic-kit-b.jpg" alt="Magic Kit B"></div>
+      </a>
+      <a href="magic-kit-b.html" class="prod-card fade-up">
+        <div class="prod-img"><img src="product-magic-kit.jpg" alt="Magic Kit B"></div>
         <div class="prod-body">
           <div class="prod-cat">Installation Kit</div>
           <div class="prod-name">Dust-Free Magic Kit</div>
           <div class="prod-desc">Easy-install dust-free kit. Water drop angle 118°→115°. Edge anti-collision ≥20KGS. AF Shin-Etsu 10,000 times.</div>
-          <a href="products.html" class="prod-link">View Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></a>
+          <span class="prod-link">View Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -513,7 +515,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
         </div>
       </div>
       <div class="why-visual fade-up">
-        <img src="factory-1.jpg" alt="ULELA Factory">
+        <img src="factory-overview.jpg" alt="ULELA Factory Overview">
       </div>
     </div>
   </div>
@@ -561,7 +563,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
       <p class="sub">Every step managed in-house for quality, consistency and speed.</p>
     </div>
     <div class="factory-grid">
-      <div class="fac-item big fade-up"><img src="process-glass-cutting.jpg" alt="Glass Cutting"><div class="fac-lbl">Glass Cutting</div></div>
+      <div class="fac-item fade-up"><img src="process-glass-cutting.jpg" alt="Glass Cutting"><div class="fac-lbl">Glass Cutting</div></div>
       <div class="fac-item fade-up"><img src="process-cnc.jpg" alt="CNC"><div class="fac-lbl">CNC Precision</div></div>
       <div class="fac-item fade-up"><img src="process-polishing.jpg" alt="Polishing"><div class="fac-lbl">Polishing</div></div>
       <div class="fac-item fade-up"><img src="process-ultrasonic-cleaning.jpg" alt="Ultrasonic Cleaning"><div class="fac-lbl">Ultrasonic Cleaning</div></div>
@@ -622,6 +624,35 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
   </div>
 </section>
 
+<!-- SIDE FLOATING BUTTONS -->
+<div class="side-btns">
+  <a href="https://wa.me/8613691648395" target="_blank" class="side-btn side-wa" title="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="#fff"/></svg>
+  </a>
+  <a href="mailto:lisa@ulelaglass.com" class="side-btn side-email" title="Email">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  </a>
+  <a href="contact.html" class="side-btn side-quote" title="Get a Quote">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+  </a>
+  <button class="side-btn side-top" title="Back to Top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+</div>
+
+<style>
+.side-btns{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:999;display:flex;flex-direction:column;gap:8px}
+.side-btn{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s ease;border:none;text-decoration:none}
+.side-btn:hover{transform:scale(1.12);box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.side-btn svg{width:20px;height:20px}
+.side-wa{background:#25D366}
+.side-email{background:#1A3E8C}
+.side-quote{background:#2563EB}
+.side-top{background:#64748B}
+.side-top:hover{background:#1A3E8C}
+@media(max-width:768px){.side-btns{right:10px}.side-btn{width:38px;height:38px}.side-btn svg{width:17px;height:17px}}
+</style>
+
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -630,10 +661,10 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
         <div class="f-logo">ULELA</div>
         <p class="f-about">Professional OEM/ODM screen protector manufacturer based in Guangdong, China. Specializing in tempered glass, privacy glass, lens protectors and Magic Kit products for phones and tablets. CE | RoHS | ISO | BSCI | FCC | SGS certified.</p>
         <div class="f-socials">
-          <a href="#" class="soc-btn" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-          <a href="#" class="soc-btn" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-          <a href="#" class="soc-btn" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-          <a href="https://wa.me/8613691648395" class="soc-btn" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          <a href="#" class="soc-btn linkedin" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#fff"/></svg></a>
+          <a href="#" class="soc-btn facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#fff"/></svg></a>
+          <a href="#" class="soc-btn instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="#fff"/></svg></a>
+          <a href="https://wa.me/8613691648395" class="soc-btn whatsapp" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="#fff"/></svg></a>
         </div>
       </div>
       <div>
