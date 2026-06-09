@@ -720,13 +720,15 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2025 ULELA. All rights reserved.</div>
+      <div>© <span id="footerYear"></span> ULELA. All rights reserved.</div>
       <div>Professional OEM/ODM Screen Protector Manufacturer · Guangdong, China</div>
     </div>
   </div>
 </footer>
 
 <script>
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
 
