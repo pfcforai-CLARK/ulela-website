@@ -63,20 +63,19 @@ ul{list-style:none}
 /* TAB NAV */
 .tab-nav-wrap{background:var(--navy);padding:0 0 32px}
 .tab-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:1200px;margin:0 auto;padding:0 24px}
-.tab-btn{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);border-radius:var(--rl);transition:var(--tr);text-align:left}
+.tab-btn{display:flex;flex-direction:column;padding:0;cursor:pointer;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);border-radius:var(--rl);transition:var(--tr);overflow:hidden;text-align:left}
 .tab-btn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3)}
 .tab-btn.active{background:rgba(255,255,255,.15);border-color:#fff}
-.tab-thumb{width:64px;height:64px;border-radius:var(--r);overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,.2)}
-.tab-thumb img{width:100%;height:100%;object-fit:cover}
-.tab-btn-info{display:flex;flex-direction:column;gap:5px;min-width:0}
+.tab-thumb{width:100%;height:160px;overflow:hidden;flex-shrink:0}
+.tab-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s ease}
+.tab-btn:hover .tab-thumb img{transform:scale(1.04)}
+.tab-btn-info{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.tab-btn-texts{display:flex;flex-direction:column;gap:5px;flex:1}
 .tab-btn-label{font-family:var(--font-head);font-size:15px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.04em;line-height:1.2}
-.tab-btn.active .tab-btn-label{color:#fff}
 .tab-count{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);font-family:var(--font-head);font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;display:inline-block;width:fit-content}
 .tab-btn.active .tab-count{background:var(--blue);border-color:var(--blue);color:#fff}
-.tab-arrow{margin-left:auto;flex-shrink:0;opacity:0;transition:var(--tr)}
-.tab-arrow svg{width:16px;height:16px;fill:rgba(255,255,255,.7)}
-.tab-btn.active .tab-arrow{opacity:1}
-.tab-btn:hover .tab-arrow{opacity:.6}
+.tab-arrow svg{width:16px;height:16px;fill:rgba(255,255,255,.5)}
+.tab-btn.active .tab-arrow svg{fill:#fff}
 
 /* COMPAT BAR */
 .compat-bar{background:var(--navy);padding:24px 0}
@@ -261,29 +260,35 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
   <div class="tab-nav-wrap">
     <div class="container">
       <div class="tab-nav" role="tablist">
-        <button class="tab-btn active" onclick="switchTab('mobile',event)" role="tab" aria-selected="true">
+        <button class="tab-btn active" onclick="switchTab('mobile',event)" role="tab">
           <div class="tab-thumb"><img src="category-mobile.jpg" alt="Glass for Mobile Phones"></div>
           <div class="tab-btn-info">
-            <div class="tab-btn-label">Glass for Mobile Phones</div>
-            <span class="tab-count">18 SKUs</span>
+            <div class="tab-btn-texts">
+              <div class="tab-btn-label">Glass for Mobile Phones</div>
+              <span class="tab-count">18 SKUs</span>
+            </div>
+            <div class="tab-arrow"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
           </div>
-          <div class="tab-arrow"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
         </button>
-        <button class="tab-btn" onclick="switchTab('lens',event)" role="tab" aria-selected="false">
+        <button class="tab-btn" onclick="switchTab('lens',event)" role="tab">
           <div class="tab-thumb"><img src="category-lens.jpg" alt="Lens Protector"></div>
           <div class="tab-btn-info">
-            <div class="tab-btn-label">Lens Protector</div>
-            <span class="tab-count">4 SKUs</span>
+            <div class="tab-btn-texts">
+              <div class="tab-btn-label">Lens Protector</div>
+              <span class="tab-count">4 SKUs</span>
+            </div>
+            <div class="tab-arrow"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
           </div>
-          <div class="tab-arrow"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
         </button>
-        <button class="tab-btn" onclick="switchTab('tablet',event)" role="tab" aria-selected="false">
+        <button class="tab-btn" onclick="switchTab('tablet',event)" role="tab">
           <div class="tab-thumb"><img src="category-tablet.jpg" alt="Glass for Tablet"></div>
           <div class="tab-btn-info">
-            <div class="tab-btn-label">Glass for Tablet</div>
-            <span class="tab-count">2 SKUs</span>
+            <div class="tab-btn-texts">
+              <div class="tab-btn-label">Glass for Tablet</div>
+              <span class="tab-count">2 SKUs</span>
+            </div>
+            <div class="tab-arrow"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
           </div>
-          <div class="tab-arrow"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
         </button>
       </div>
     </div>
