@@ -60,20 +60,23 @@ ul{list-style:none}
 .h-stat-num{font-family:var(--font-head);font-size:26px;font-weight:800;color:var(--blue-lt);line-height:1}
 .h-stat-lbl{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.07em;margin-top:3px}
 
-/* TAB NAV — sticky under navbar */
+/* TAB NAV */
 .tab-nav-wrap{background:#fff;border-bottom:1px solid var(--gray-lt);position:sticky;top:64px;z-index:900;box-shadow:var(--sh-sm)}
 .tab-nav{display:flex;gap:0}
-.tab-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 12px;cursor:pointer;border:none;background:transparent;transition:var(--tr);border-bottom:3px solid transparent;position:relative}
+.tab-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:0;padding:0;cursor:pointer;border:none;background:transparent;transition:var(--tr);border-bottom:3px solid transparent;overflow:hidden}
 .tab-btn:hover{background:var(--sky)}
 .tab-btn.active{border-bottom-color:var(--navy);background:var(--sky)}
-.tab-btn-icon{width:32px;height:32px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;background:var(--gray-lt);transition:var(--tr)}
-.tab-btn-icon svg{width:16px;height:16px;fill:var(--gray)}
-.tab-btn.active .tab-btn-icon{background:var(--navy)}
-.tab-btn.active .tab-btn-icon svg{fill:#fff}
+.tab-img-wrap{width:100%;height:80px;overflow:hidden;position:relative;flex-shrink:0}
+.tab-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;filter:brightness(.75)}
+.tab-btn:hover .tab-img-wrap img{transform:scale(1.05);filter:brightness(.85)}
+.tab-btn.active .tab-img-wrap img{filter:brightness(.9)}
+.tab-btn-bottom{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 8px}
 .tab-btn-label{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--text-lt);text-transform:uppercase;letter-spacing:.04em;text-align:center;line-height:1.2}
 .tab-btn.active .tab-btn-label{color:var(--navy)}
 .tab-count{background:var(--gray-lt);color:var(--gray);font-family:var(--font-head);font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px}
 .tab-btn.active .tab-count{background:var(--navy);color:#fff}
+.tab-active-bar{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--navy);display:none}
+.tab-btn.active .tab-active-bar{display:block}
 
 /* TAB PANELS */
 .tab-panels{min-height:600px}
@@ -250,20 +253,26 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
   <div class="tab-nav-wrap">
     <div class="container">
       <div class="tab-nav" role="tablist">
-        <button class="tab-btn active" onclick="switchTab('mobile')" role="tab" aria-selected="true">
-          <div class="tab-btn-icon"><svg viewBox="0 0 20 20"><path d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z"/></svg></div>
-          <div class="tab-btn-label">Glass for Mobile Phones</div>
-          <span class="tab-count">17 SKUs</span>
+        <button class="tab-btn active" onclick="switchTab('mobile',event)" role="tab" aria-selected="true">
+          <div class="tab-img-wrap"><img src="category-mobile.jpg" alt="Glass for Mobile Phones"></div>
+          <div class="tab-btn-bottom">
+            <div class="tab-btn-label">Glass for Mobile Phones</div>
+            <span class="tab-count">18 SKUs</span>
+          </div>
         </button>
-        <button class="tab-btn" onclick="switchTab('lens')" role="tab" aria-selected="false">
-          <div class="tab-btn-icon"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 100-8 4 4 0 000 8z" clip-rule="evenodd"/></svg></div>
-          <div class="tab-btn-label">Lens Protector</div>
-          <span class="tab-count">4 SKUs</span>
+        <button class="tab-btn" onclick="switchTab('lens',event)" role="tab" aria-selected="false">
+          <div class="tab-img-wrap"><img src="category-lens.jpg" alt="Lens Protector"></div>
+          <div class="tab-btn-bottom">
+            <div class="tab-btn-label">Lens Protector</div>
+            <span class="tab-count">4 SKUs</span>
+          </div>
         </button>
-        <button class="tab-btn" onclick="switchTab('tablet')" role="tab" aria-selected="false">
-          <div class="tab-btn-icon"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm4 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg></div>
-          <div class="tab-btn-label">Glass for Tablet</div>
-          <span class="tab-count">3 SKUs</span>
+        <button class="tab-btn" onclick="switchTab('tablet',event)" role="tab" aria-selected="false">
+          <div class="tab-img-wrap"><img src="category-tablet.jpg" alt="Glass for Tablet"></div>
+          <div class="tab-btn-bottom">
+            <div class="tab-btn-label">Glass for Tablet</div>
+            <span class="tab-count">2 SKUs</span>
+          </div>
         </button>
       </div>
     </div>
@@ -280,13 +289,13 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
         <div class="cat-header-inner fade-up">
           <div class="cat-img">
             <img src="category-mobile.jpg" alt="Glass for Mobile Phones – Tempered Glass OEM Manufacturer China">
-            <div class="cat-img-badge">17 Products · <span>Phone Series</span></div>
+            <div class="cat-img-badge">18 Products · <span>Phone Series</span></div>
           </div>
           <div>
             <div style="font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:8px">Series 01</div>
             <h2 class="sec-title">Glass for Mobile Phones</h2>
             <div class="divider"></div>
-            <p style="font-size:14.5px;color:var(--text-lt);line-height:1.75;margin-bottom:10px">Our most comprehensive product line — 17 SKUs covering every major market segment. From standard 9H HD silkprint to premium Corning AR glass, privacy glass and ultrasonic-unlock-compatible versions for Samsung's under-screen fingerprint technology.</p>
+            <p style="font-size:14.5px;color:var(--text-lt);line-height:1.75;margin-bottom:10px">Our most comprehensive product line — 18 SKUs covering every major market segment. From standard 9H HD silkprint to premium Corning AR glass, privacy glass and ultrasonic-unlock-compatible versions for Samsung's under-screen fingerprint technology.</p>
             <p style="font-size:14.5px;color:var(--text-lt);line-height:1.75;margin-bottom:16px">Compatible with iPhone 7 through iPhone 16 series, Samsung Galaxy S/A/Note, Huawei, Xiaomi, OPPO, Vivo and 1,000+ models. All available for OEM customisation.</p>
             <div class="spec-tags">
               <span class="spec-tag">9H Hardness</span>
@@ -296,7 +305,7 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
               <span class="spec-tag">CE / RoHS Certified</span>
             </div>
             <div class="cat-btns">
-              <a href="glass-for-mobile-phones.html" class="btn btn-primary"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>View All 17 Products</a>
+              <a href="glass-for-mobile-phones.html" class="btn btn-primary"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>View All 18 Products</a>
               <a href="get-a-quote.html" class="btn btn-outline-navy">Get a Quote</a>
             </div>
           </div>
@@ -312,17 +321,40 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
           <a href="hd-silkprint-2x-gorilla-bp.html" class="prod-card fade-up"><div class="prod-thumb"><img src="hd-silkprint-2x-gorilla-bp.jpg" alt="HD Silkprint 2X Gorilla BP"></div><div class="prod-body"><div class="prod-name">HD Silkprint 2X Gorilla BP</div><div class="prod-specs"><div class="prod-spec">Gorilla-grade material</div><div class="prod-spec">Non-bubble · anti-shock</div><div class="prod-spec">9H · anti-oil coating</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
           <a href="3x-corning.html" class="prod-card fade-up"><div class="prod-thumb"><img src="3x-corning.jpg" alt="3X Corning AR Glass"><span class="prod-badge b-premium">Premium</span></div><div class="prod-body"><div class="prod-name">3X Corning AR Glass</div><div class="prod-specs"><div class="prod-spec">Corning Glass material</div><div class="prod-spec">AR anti-reflection coating</div><div class="prod-spec">O-shaped bending design</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
           <a href="privacy-30-white-bp.html" class="prod-card fade-up"><div class="prod-thumb"><img src="privacy-30-white-bp.jpg" alt="Privacy 30 White BP"></div><div class="prod-body"><div class="prod-name">Privacy 30° White BP</div><div class="prod-specs"><div class="prod-spec">30° privacy angle</div><div class="prod-spec">Korean composite glue 270μm</div><div class="prod-spec">Ball drop: 64kg no break</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
-          <a href="privacy-30-esd-og-bp.html" class="prod-card fade-up"><div class="prod-thumb"><img src="privacy-30-esd-og-bp.jpg" alt="Privacy 30 ESD OG BP"><span class="prod-badge b-hot">Hot</span></div><div class="prod-body"><div class="prod-name">Privacy 30° ESD OG BP</div><div class="prod-specs"><div class="prod-spec">ESD antistatic treatment</div><div class="prod-spec">OG original glass grade</div><div class="prod-spec">30° privacy protection</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
+          <a href="privacy-30-esd-og-bp.html" class="prod-card fade-up"><div class="prod-thumb"><img src="privacy-30-esd-og-bp.jpg" alt="Privacy 30 ESD OG BP"></div><div class="prod-body"><div class="prod-name">Privacy 30° ESD OG BP</div><div class="prod-specs"><div class="prod-spec">ESD antistatic treatment</div><div class="prod-spec">OG original glass grade</div><div class="prod-spec">30° privacy protection</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
           <a href="privacy-25-blackking-bp.html" class="prod-card fade-up"><div class="prod-thumb"><img src="privacy-25-blackking-bp.jpg" alt="Privacy 25 BlackKing BP"></div><div class="prod-body"><div class="prod-name">Privacy 25° BlackKing BP</div><div class="prod-specs"><div class="prod-spec">Narrow 25° privacy angle</div><div class="prod-spec">BlackKing premium grade</div><div class="prod-spec">ESD antistatic</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
-          <a href="privacy-360-blackking-bp.html" class="prod-card fade-up"><div class="prod-thumb"><img src="privacy-360-blackking-bp.jpg" alt="Privacy 360 BlackKing BP"></div><div class="prod-body"><div class="prod-name">Privacy 360° BlackKing BP</div><div class="prod-specs"><div class="prod-spec">Full 360° privacy shield</div><div class="prod-spec">Blocks side &amp; top viewing</div><div class="prod-spec">BlackKing premium grade</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
+          <a href="privacy-360-blackking-bp.html" class="prod-card fade-up"><div class="prod-thumb"><img src="privacy-360-blackking-bp.jpg" alt="Privacy 360 BlackKing BP"><span class="prod-badge b-hot">Hot</span></div><div class="prod-body"><div class="prod-name">Privacy 360° BlackKing BP</div><div class="prod-specs"><div class="prod-spec">Full 360° privacy shield</div><div class="prod-spec">Blocks side &amp; top viewing</div><div class="prod-spec">BlackKing premium grade</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
           <a href="privacy-360-esd-og-bp.html" class="prod-card fade-up"><div class="prod-thumb"><img src="privacy-360-esd-og-bp.jpg" alt="Privacy 360 ESD OG BP"></div><div class="prod-body"><div class="prod-name">Privacy 360° ESD OG BP</div><div class="prod-specs"><div class="prod-spec">360° full privacy shield</div><div class="prod-spec">ESD + OG grade glass</div><div class="prod-spec">Anti-peep all directions</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
           <a href="ultrasonic-unlock-glass.html" class="prod-card fade-up"><div class="prod-thumb"><img src="ultrasonic-unlock-glass.jpg" alt="Ultrasonic Unlock Glass"><span class="prod-badge b-best">Best Seller</span></div><div class="prod-body"><div class="prod-name">Ultrasonic Unlock Glass</div><div class="prod-specs"><div class="prod-spec">Ultrasonic fingerprint pass</div><div class="prod-spec">Samsung S series</div><div class="prod-spec">Drop: 64G 1M 3× no break</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
           <a href="ultrasonic-unlock-blackking-bp.html" class="prod-card fade-up"><div class="prod-thumb"><img src="ultrasonic-unlock-blackking-bp.jpg" alt="Ultrasonic Unlock BlackKing BP"></div><div class="prod-body"><div class="prod-name">Ultrasonic Unlock BlackKing BP</div><div class="prod-specs"><div class="prod-spec">BlackKing premium grade</div><div class="prod-spec">Ultrasonic fingerprint pass</div><div class="prod-spec">ESD antistatic package</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
-          <a href="privacy-ultrasonic-unlock-esd-bp.html" class="prod-card fade-up"><div class="prod-thumb"><img src="privacy-ultrasonic-unlock-esd-bp.jpg" alt="Privacy Ultrasonic Unlock ESD BP"><span class="prod-badge b-new">New</span></div><div class="prod-body"><div class="prod-name">Privacy Ultrasonic Unlock ESD BP</div><div class="prod-specs"><div class="prod-spec">Privacy + ultrasonic unlock</div><div class="prod-spec">ESD antistatic grade</div><div class="prod-spec">2-in-1 function</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
+          <a href="privacy-ultrasonic-unlock-esd-bp.html" class="prod-card fade-up"><div class="prod-thumb"><img src="privacy-ultrasonic-unlock-esd-bp.jpg" alt="Privacy Ultrasonic Unlock ESD BP"></div><div class="prod-body"><div class="prod-name">Privacy Ultrasonic Unlock ESD BP</div><div class="prod-specs"><div class="prod-spec">Privacy + ultrasonic unlock</div><div class="prod-spec">ESD antistatic grade</div><div class="prod-spec">2-in-1 function</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
           <a href="3d-cured-full-glue.html" class="prod-card fade-up"><div class="prod-thumb"><img src="3d-cured-full-glue.jpg" alt="3D Cured Full Glue"></div><div class="prod-body"><div class="prod-name">3D Cured Full Glue</div><div class="prod-specs"><div class="prod-spec">For curved-screen devices</div><div class="prod-spec">Full gelly glue 0.18μm</div><div class="prod-spec">Ultrasonic fingerprint pass</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
           <a href="magic-kit-a.html" class="prod-card fade-up"><div class="prod-thumb"><img src="magic-kit-a.jpg" alt="Magic Kit A"><span class="prod-badge b-hot">Hot</span></div><div class="prod-body"><div class="prod-name">Magic Kit A</div><div class="prod-specs"><div class="prod-spec">Dust-free alignment frame</div><div class="prod-spec">Zero-bubble install</div><div class="prod-spec">Water angle 118°</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
-          <a href="magic-kit-b.html" class="prod-card fade-up"><div class="prod-thumb"><img src="magic-kit-b.jpg" alt="Magic Kit B"></div><div class="prod-body"><div class="prod-name">Magic Kit B</div><div class="prod-specs"><div class="prod-spec">Auto-alignment tray</div><div class="prod-spec">Edge anti-collision ≥20KGS</div><div class="prod-spec">AF Shin-Etsu 10,000×</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
-          <a href="magic-kit-c.html" class="prod-card fade-up"><div class="prod-thumb"><img src="magic-kit-c.jpg" alt="Magic Kit C"></div><div class="prod-body"><div class="prod-name">Magic Kit C</div><div class="prod-specs"><div class="prod-spec">Stick Film By Yourself</div><div class="prod-spec">Retail-ready packaging</div><div class="prod-spec">Drop: 64G 2M 3× no break</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
+          <a href="magic-kit-b.html" class="prod-card fade-up"><div class="prod-thumb"><img src="magic-kit-b.jpg" alt="Magic Kit B"><span class="prod-badge b-hot">Hot</span></div><div class="prod-body"><div class="prod-name">Magic Kit B</div><div class="prod-specs"><div class="prod-spec">Auto-alignment tray</div><div class="prod-spec">Edge anti-collision ≥20KGS</div><div class="prod-spec">AF Shin-Etsu 10,000×</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
+          <a href="magic-kit-c.html" class="prod-card fade-up"><div class="prod-thumb"><img src="magic-kit-c.jpg" alt="Magic Kit C"><span class="prod-badge b-premium">Premium</span></div><div class="prod-body"><div class="prod-name">Magic Kit C</div><div class="prod-specs"><div class="prod-spec">Stick Film By Yourself</div><div class="prod-spec">Retail-ready packaging</div><div class="prod-spec">Drop: 64G 2M 3× no break</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
+          <a href="ar-glass.html" class="prod-card fade-up"><div class="prod-thumb"><img src="ar-glass.jpg" alt="AR Glass"><span class="prod-badge b-hot">Hot</span></div><div class="prod-body"><div class="prod-name">AR Glass</div><div class="prod-specs"><div class="prod-spec">AR anti-reflection coating</div><div class="prod-spec">95.5% transmittance</div><div class="prod-spec">9H · Electroplating AF</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile phones compat -->
+    <div class="compat-bar">
+      <div class="container">
+        <div class="compat-inner">
+          <div class="compat-label">Compatible Brands</div>
+          <div class="compat-brands">
+            <span class="brand-pill">Apple iPhone</span>
+            <span class="brand-pill">Samsung Galaxy S / A / Note</span>
+            <span class="brand-pill">Huawei / Honor</span>
+            <span class="brand-pill">Xiaomi / Redmi / POCO</span>
+            <span class="brand-pill">OPPO / OnePlus / Realme</span>
+            <span class="brand-pill">Vivo</span>
+            <span class="brand-pill">Google Pixel</span>
+            <span class="brand-pill">Sony Xperia</span>
+            <span class="brand-pill">Motorola</span>
+            <span class="brand-pill">Nokia</span>
+            <span class="brand-pill">Infinix / Tecno / itel</span>
+            <span class="brand-pill">1,000+ Models</span>
+          </div>
         </div>
       </div>
     </div>
@@ -368,6 +400,18 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
         </div>
       </div>
     </div>
+    <!-- Lens compat -->
+    <div class="compat-bar">
+      <div class="container">
+        <div class="compat-inner">
+          <div class="compat-label">Compatible Models</div>
+          <div class="compat-brands">
+            <span class="brand-pill">Apple iPhone 12 / 13 / 14 / 15 / 16 / 17 Pro series</span>
+            <span class="brand-pill">Samsung Galaxy S21 / S22 / S23 / S24 / S25 series</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- PANEL 3: TABLET -->
@@ -402,41 +446,45 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
     </div>
     <div class="products-section">
       <div class="container">
-        <div class="prod-grid" style="grid-template-columns:repeat(3,1fr);max-width:720px">
+        <div class="prod-grid" style="grid-template-columns:repeat(2,1fr);max-width:480px">
           <a href="tablet-hd.html" class="prod-card fade-up"><div class="prod-thumb"><img src="tablet-hd.jpg" alt="Tablet HD Glass iPad Samsung Tab"></div><div class="prod-body"><div class="prod-name">Tablet HD Glass</div><div class="prod-specs"><div class="prod-spec">0.33mm high-alu silicate</div><div class="prod-spec">2.5D big arc edge</div><div class="prod-spec">Water contact angle 118°</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
-          <a href="magic-kit-for-tablet.html" class="prod-card fade-up"><div class="prod-thumb"><img src="magic-kit-for-tablet.jpg" alt="Magic Kit For Tablet iPad"><span class="prod-badge b-hot">Hot</span></div><div class="prod-body"><div class="prod-name">Magic Kit For Tablet</div><div class="prod-specs"><div class="prod-spec">Easy-install alignment kit</div><div class="prod-spec">Dust-free installation</div><div class="prod-spec">Retail-ready packaging</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
-          <a href="ar-glass.html" class="prod-card fade-up"><div class="prod-thumb"><img src="ar-glass.jpg" alt="AR Glass Tablet"><span class="prod-badge b-new">New</span></div><div class="prod-body"><div class="prod-name">AR Glass (Tablet)</div><div class="prod-specs"><div class="prod-spec">AR anti-reflection coating</div><div class="prod-spec">95.5% transmittance</div><div class="prod-spec">Ideal for iPad Pro</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
+          <a href="magic-kit-for-tablet.html" class="prod-card fade-up"><div class="prod-thumb"><img src="magic-kit-for-tablet.jpg" alt="Magic Kit For Tablet iPad"><span class="prod-badge b-hot">Hot</span></div><div class="prod-body"><div class="prod-name">Magic Kit For Tablet</div><div class="prod-specs"><div class="prod-spec">Easy-install alignment kit</div><div class="prod-spec">Dust-free installation</div><div class="prod-spec">iPad only</div></div><span class="prod-link">Details <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></div></a>
+        </div>
+      </div>
+    </div>
+    <!-- Tablet compat -->
+    <div class="compat-bar">
+      <div class="container">
+        <div class="compat-inner" style="flex-direction:column;align-items:flex-start;gap:14px">
+          <div class="compat-label" style="color:rgba(255,255,255,.55);margin-bottom:2px">Compatible Models</div>
+          <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start">
+            <div>
+              <div style="font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px">Tablet HD Glass — All Major Brands</div>
+              <div class="compat-brands">
+                <span class="brand-pill">iPad Air / Pro / Mini</span>
+                <span class="brand-pill">Samsung Galaxy Tab S / A</span>
+                <span class="brand-pill">Huawei MatePad</span>
+                <span class="brand-pill">Xiaomi Pad</span>
+                <span class="brand-pill">Lenovo Tab</span>
+                <span class="brand-pill">All Major Tablet Brands</span>
+              </div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px">Magic Kit For Tablet — iPad Only</div>
+              <div class="compat-brands">
+                <span class="brand-pill">iPad Air</span>
+                <span class="brand-pill">iPad Pro</span>
+                <span class="brand-pill">iPad Mini</span>
+                <span class="brand-pill">iPad (Standard)</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
 </div><!-- end tab-panels -->
-
-<!-- COMPAT BAR -->
-<div class="compat-bar">
-  <div class="container">
-    <div class="compat-inner">
-      <div class="compat-label">Compatible Brands</div>
-      <div class="compat-brands">
-        <span class="brand-pill">Apple iPhone</span>
-        <span class="brand-pill">Samsung Galaxy S / A / Note</span>
-        <span class="brand-pill">Huawei / Honor</span>
-        <span class="brand-pill">Xiaomi / Redmi / POCO</span>
-        <span class="brand-pill">OPPO / OnePlus / Realme</span>
-        <span class="brand-pill">Vivo</span>
-        <span class="brand-pill">Google Pixel</span>
-        <span class="brand-pill">Sony Xperia</span>
-        <span class="brand-pill">Motorola</span>
-        <span class="brand-pill">Nokia</span>
-        <span class="brand-pill">Infinix / Tecno / itel</span>
-        <span class="brand-pill">iPad</span>
-        <span class="brand-pill">Samsung Tab</span>
-        <span class="brand-pill">1,000+ Models</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- CTA -->
 <section class="prod-cta">
@@ -497,14 +545,14 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
 <script>
 document.getElementById('footerYear').textContent = new Date().getFullYear();
 
-function switchTab(name) {
+function switchTab(name, e) {
   // Update buttons
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.remove('active');
     btn.setAttribute('aria-selected','false');
   });
-  event.currentTarget.classList.add('active');
-  event.currentTarget.setAttribute('aria-selected','true');
+  e.currentTarget.classList.add('active');
+  e.currentTarget.setAttribute('aria-selected','true');
 
   // Update panels
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
