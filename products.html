@@ -50,9 +50,9 @@ ul{list-style:none}
 .hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
 
 /* PAGE HERO */
-.page-hero{background:linear-gradient(135deg,var(--navy) 0%,#1e4db7 100%);padding:48px 0 80px;position:relative;overflow:visible}
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,#1e4db7 100%);padding:48px 0 0;position:relative;overflow:hidden}
 .page-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='28' y='28' width='4' height='4' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E") repeat}
-.hero-top{position:relative;z-index:1;padding-bottom:0}
+.hero-top{position:relative;z-index:1;padding-bottom:40px}
 .label{display:inline-block;font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:10px}
 .page-hero h1{font-family:var(--font-head);font-size:clamp(28px,4.5vw,48px);font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.02em;margin-bottom:12px}
 .page-hero p{font-size:15px;color:rgba(255,255,255,.7);max-width:600px;margin-bottom:24px}
@@ -61,20 +61,22 @@ ul{list-style:none}
 .h-stat-lbl{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.07em;margin-top:3px}
 
 /* TAB NAV */
-.tab-nav-wrap{background:transparent;border-bottom:none;position:sticky;top:64px;z-index:900;pointer-events:none}
-.tab-nav{display:flex;gap:12px;padding:0 24px;max-width:1200px;margin:0 auto;transform:translateY(-50%);pointer-events:all}
-.tab-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0;cursor:pointer;border:none;background:#fff;border-radius:var(--rl);box-shadow:0 8px 28px rgba(11,25,58,.22);transition:var(--tr);overflow:hidden;position:relative;height:130px;border:2px solid var(--gray-lt)}
-.tab-btn:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(11,25,58,.28);border-color:var(--blue-lt)}
-.tab-btn.active{transform:translateY(-6px);box-shadow:0 16px 40px rgba(26,62,140,.35);border-color:var(--navy);border-width:2px}
-.tab-btn-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .4s ease}
-.tab-btn:hover .tab-btn-bg{transform:scale(1.05)}
-.tab-btn.active .tab-btn-bg{transform:scale(1.03)}
-.tab-btn-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,62,140,.88) 0%,rgba(26,62,140,.35) 55%,rgba(26,62,140,.05) 100%);transition:var(--tr)}
-.tab-btn.active .tab-btn-overlay{background:linear-gradient(to top,rgba(26,62,140,.95) 0%,rgba(26,62,140,.5) 55%,rgba(26,62,140,.15) 100%)}
-.tab-btn-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 10px;width:100%}
-.tab-btn-label{font-family:var(--font-head);font-size:13.5px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.05em;text-align:center;line-height:1.2;text-shadow:0 1px 4px rgba(0,0,0,.5)}
-.tab-count{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff;font-family:var(--font-head);font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;transition:var(--tr)}
-.tab-btn.active .tab-count{background:var(--blue);border-color:var(--blue)}
+.tab-nav-wrap{background:var(--navy);padding:0 0 32px}
+.tab-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:1200px;margin:0 auto;padding:0 24px}
+.tab-btn{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);border-radius:var(--rl);transition:var(--tr);text-align:left}
+.tab-btn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3)}
+.tab-btn.active{background:rgba(255,255,255,.15);border-color:#fff}
+.tab-thumb{width:64px;height:64px;border-radius:var(--r);overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,.2)}
+.tab-thumb img{width:100%;height:100%;object-fit:cover}
+.tab-btn-info{display:flex;flex-direction:column;gap:5px;min-width:0}
+.tab-btn-label{font-family:var(--font-head);font-size:15px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.04em;line-height:1.2}
+.tab-btn.active .tab-btn-label{color:#fff}
+.tab-count{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);font-family:var(--font-head);font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;display:inline-block;width:fit-content}
+.tab-btn.active .tab-count{background:var(--blue);border-color:var(--blue);color:#fff}
+.tab-arrow{margin-left:auto;flex-shrink:0;opacity:0;transition:var(--tr)}
+.tab-arrow svg{width:16px;height:16px;fill:rgba(255,255,255,.7)}
+.tab-btn.active .tab-arrow{opacity:1}
+.tab-btn:hover .tab-arrow{opacity:.6}
 
 /* COMPAT BAR */
 .compat-bar{background:var(--navy);padding:24px 0}
@@ -85,7 +87,7 @@ ul{list-style:none}
 .brand-pill:hover{background:rgba(255,255,255,.15);color:#fff}
 
 /* TAB PANELS */
-.tab-panels{min-height:600px;padding-top:80px;background:#fff}
+.tab-panels{min-height:600px;background:#fff}
 .tab-panel{display:none}
 .tab-panel.active{display:block}
 
@@ -191,7 +193,8 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
 @media(max-width:768px){
   .cat-header-inner{grid-template-columns:1fr}
   .prod-grid{grid-template-columns:repeat(2,1fr)}
-  .tab-btn-label{font-size:11px}
+  .tab-nav{grid-template-columns:1fr;gap:8px}
+  .tab-btn-label{font-size:13px}
   .footer-inner{grid-template-columns:1fr;gap:28px}
   .footer-bottom{flex-direction:column;text-align:center}
   .nav-links{display:none}
@@ -200,8 +203,7 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
 }
 @media(max-width:480px){
   .prod-grid{grid-template-columns:repeat(2,1fr)}
-  .tab-btn{padding:12px 6px}
-  .tab-btn-icon{width:26px;height:26px}
+  .tab-thumb{width:48px;height:48px}
 }
 </style>
 </head>
@@ -260,28 +262,28 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
     <div class="container">
       <div class="tab-nav" role="tablist">
         <button class="tab-btn active" onclick="switchTab('mobile',event)" role="tab" aria-selected="true">
-          <div class="tab-btn-bg" style="background-image:url('category-mobile.jpg')"></div>
-          <div class="tab-btn-overlay"></div>
-          <div class="tab-btn-content">
+          <div class="tab-thumb"><img src="category-mobile.jpg" alt="Glass for Mobile Phones"></div>
+          <div class="tab-btn-info">
             <div class="tab-btn-label">Glass for Mobile Phones</div>
             <span class="tab-count">18 SKUs</span>
           </div>
+          <div class="tab-arrow"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
         </button>
         <button class="tab-btn" onclick="switchTab('lens',event)" role="tab" aria-selected="false">
-          <div class="tab-btn-bg" style="background-image:url('category-lens.jpg')"></div>
-          <div class="tab-btn-overlay"></div>
-          <div class="tab-btn-content">
+          <div class="tab-thumb"><img src="category-lens.jpg" alt="Lens Protector"></div>
+          <div class="tab-btn-info">
             <div class="tab-btn-label">Lens Protector</div>
             <span class="tab-count">4 SKUs</span>
           </div>
+          <div class="tab-arrow"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
         </button>
         <button class="tab-btn" onclick="switchTab('tablet',event)" role="tab" aria-selected="false">
-          <div class="tab-btn-bg" style="background-image:url('category-tablet.jpg')"></div>
-          <div class="tab-btn-overlay"></div>
-          <div class="tab-btn-content">
+          <div class="tab-thumb"><img src="category-tablet.jpg" alt="Glass for Tablet"></div>
+          <div class="tab-btn-info">
             <div class="tab-btn-label">Glass for Tablet</div>
             <span class="tab-count">2 SKUs</span>
           </div>
+          <div class="tab-arrow"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
         </button>
       </div>
     </div>
