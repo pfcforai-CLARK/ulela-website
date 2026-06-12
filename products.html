@@ -66,10 +66,10 @@ ul{list-style:none}
 .tab-btn{display:flex;flex-direction:column;padding:0;cursor:pointer;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);border-radius:var(--rl);transition:var(--tr);overflow:hidden;text-align:left}
 .tab-btn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3)}
 .tab-btn.active{background:rgba(255,255,255,.15);border-color:#fff}
-.tab-thumb{width:100%;height:240px;overflow:hidden;flex-shrink:0}
-.tab-thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .4s ease}
+.tab-thumb{width:100%;height:240px;overflow:hidden;flex-shrink:0;pointer-events:none}
+.tab-thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .4s ease;pointer-events:none}
 .tab-btn:hover .tab-thumb img{transform:scale(1.06)}
-.tab-btn-info{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.tab-btn-info{display:flex;align-items:center;gap:12px;padding:14px 16px;pointer-events:none}
 .tab-btn-texts{display:flex;flex-direction:column;gap:5px;flex:1}
 .tab-btn-label{font-family:var(--font-head);font-size:15px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.04em;line-height:1.2}
 .tab-count{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);font-family:var(--font-head);font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;display:inline-block;width:fit-content}
