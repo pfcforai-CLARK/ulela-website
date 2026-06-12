@@ -61,7 +61,7 @@ ul{list-style:none}
 .h-stat-lbl{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.07em;margin-top:3px}
 
 /* TAB NAV */
-.tab-nav-wrap{background:var(--navy);padding:0 0 32px}
+.tab-nav-wrap{background:var(--navy);padding:0 0 32px;position:sticky;top:64px;z-index:900;box-shadow:0 4px 12px rgba(0,0,0,.2)}
 .tab-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:1200px;margin:0 auto;padding:0 24px}
 .tab-btn{display:flex;flex-direction:column;padding:0;cursor:pointer;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);border-radius:var(--rl);transition:var(--tr);overflow:hidden;text-align:left}
 .tab-btn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3)}
@@ -569,6 +569,12 @@ function switchTab(name) {
     el.classList.remove('visible');
     setTimeout(() => el.classList.add('visible'), 50);
   });
+  // 滚动到内容区，偏移sticky tab高度
+  const panel = document.getElementById('panel-' + name);
+  const tabHeight = document.querySelector('.tab-nav-wrap').offsetHeight;
+  const navHeight = 64;
+  const top = panel.getBoundingClientRect().top + window.scrollY - navHeight - tabHeight;
+  window.scrollTo({top: top, behavior: 'smooth'});
 }
 
 // addEventListener方式绑定，最稳定
