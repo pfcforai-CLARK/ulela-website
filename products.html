@@ -66,8 +66,8 @@ ul{list-style:none}
 .tab-btn{display:flex;flex-direction:column;padding:0;cursor:pointer;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);border-radius:var(--rl);transition:var(--tr);overflow:hidden;text-align:left}
 .tab-btn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3)}
 .tab-btn.active{background:rgba(255,255,255,.15);border-color:#fff}
-.tab-thumb{width:100%;height:160px;overflow:hidden;flex-shrink:0}
-.tab-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s ease}
+.tab-thumb{width:100%;height:240px;overflow:hidden;flex-shrink:0}
+.tab-thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .4s ease}
 .tab-btn:hover .tab-thumb img{transform:scale(1.06)}
 .tab-btn-info{display:flex;align-items:center;gap:12px;padding:14px 16px}
 .tab-btn-texts{display:flex;flex-direction:column;gap:5px;flex:1}
@@ -260,8 +260,8 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
   <div class="tab-nav-wrap">
     <div class="container">
       <div class="tab-nav" role="tablist">
-        <button class="tab-btn active" onclick="switchTab('mobile',event)" role="tab">
-          <div class="tab-thumb"><img src="category-mobile.jpg" alt="Glass for Mobile Phones"></div>
+        <button class="tab-btn active" data-tab="mobile" onclick="switchTab('mobile')" role="tab">
+          <div class="tab-thumb"><img src="tab-mobile.jpg" alt="Glass for Mobile Phones"></div>
           <div class="tab-btn-info">
             <div class="tab-btn-texts">
               <div class="tab-btn-label">Glass for Mobile Phones</div>
@@ -270,8 +270,8 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
             <div class="tab-arrow"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
           </div>
         </button>
-        <button class="tab-btn" onclick="switchTab('lens',event)" role="tab">
-          <div class="tab-thumb"><img src="category-lens.jpg" alt="Lens Protector"></div>
+        <button class="tab-btn" data-tab="lens" onclick="switchTab('lens')" role="tab">
+          <div class="tab-thumb"><img src="tab-lens.jpg" alt="Lens Protector"></div>
           <div class="tab-btn-info">
             <div class="tab-btn-texts">
               <div class="tab-btn-label">Lens Protector</div>
@@ -280,8 +280,8 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
             <div class="tab-arrow"><svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
           </div>
         </button>
-        <button class="tab-btn" onclick="switchTab('tablet',event)" role="tab">
-          <div class="tab-thumb"><img src="category-tablet.jpg" alt="Glass for Tablet"></div>
+        <button class="tab-btn" data-tab="tablet" onclick="switchTab('tablet')" role="tab">
+          <div class="tab-thumb"><img src="tab-tablet.jpg" alt="Glass for Tablet"></div>
           <div class="tab-btn-info">
             <div class="tab-btn-texts">
               <div class="tab-btn-label">Glass for Tablet</div>
@@ -559,27 +559,18 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
 <script>
 document.getElementById('footerYear').textContent = new Date().getFullYear();
 
-function switchTab(name, e) {
-  // Update buttons
+function switchTab(name) {
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.remove('active');
-    btn.setAttribute('aria-selected','false');
   });
-  e.currentTarget.classList.add('active');
-  e.currentTarget.setAttribute('aria-selected','true');
-
-  // Update panels
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
   document.getElementById('panel-' + name).classList.add('active');
-
-  // Re-trigger fade animations for new panel
   const newPanel = document.getElementById('panel-' + name);
   newPanel.querySelectorAll('.fade-up').forEach(el => {
     el.classList.remove('visible');
     setTimeout(() => el.classList.add('visible'), 50);
   });
-
-  // Scroll to tab nav
   document.querySelector('.tab-nav-wrap').scrollIntoView({behavior:'smooth', block:'start'});
 }
 
