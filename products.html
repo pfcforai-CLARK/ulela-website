@@ -66,6 +66,7 @@ ul{list-style:none}
 .tab-btn{display:flex;flex-direction:column;padding:0;cursor:pointer;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);border-radius:var(--rl);transition:var(--tr);overflow:hidden;text-align:left}
 .tab-btn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3)}
 .tab-btn.active{background:rgba(255,255,255,.15);border-color:#fff}
+.tab-btn *{pointer-events:none}
 .tab-thumb{width:100%;height:240px;overflow:hidden;flex-shrink:0}
 .tab-thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .4s ease}
 .tab-btn:hover .tab-thumb img{transform:scale(1.06)}
