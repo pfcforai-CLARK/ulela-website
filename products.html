@@ -194,8 +194,9 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
   .cat-header-inner{grid-template-columns:1fr}
   .prod-grid{grid-template-columns:repeat(2,1fr)}
   .tab-nav{grid-template-columns:1fr;gap:8px}
-  .tab-btn-label{font-size:13px}
-  .footer-inner{grid-template-columns:1fr;gap:28px}
+  .tab-btn{flex-direction:row;align-items:center}
+  .tab-thumb{width:100px;height:80px;flex-shrink:0}
+  .tab-btn-label{font-size:13px}  .footer-inner{grid-template-columns:1fr;gap:28px}
   .footer-bottom{flex-direction:column;text-align:center}
   .nav-links{display:none}
   .hamburger{display:flex}
@@ -203,7 +204,6 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
 }
 @media(max-width:480px){
   .prod-grid{grid-template-columns:repeat(2,1fr)}
-  .tab-thumb{width:48px;height:48px}
 }
 
 /* NAV DROPDOWN */
