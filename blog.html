@@ -85,9 +85,17 @@ a{text-decoration:none;color:inherit}
 /* BLOG GRID */
 .blog-main{padding:56px 0 88px;background:var(--off-white)}
 .featured-post{display:grid;grid-template-columns:1.1fr 1fr;gap:0;background:#fff;border-radius:var(--rl);overflow:hidden;box-shadow:var(--sh-md);margin-bottom:44px;border:1px solid var(--gray-lt)}
-.featured-img{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,#1e4fa8 100%);display:flex;align-items:center;justify-content:center;padding:40px}
-.featured-img-icon{width:84px;height:84px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center}
-.featured-img-icon svg{width:42px;height:42px;fill:#fff}
+.featured-img{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,#1e4fa8 100%);display:flex;align-items:center;justify-content:center;padding:36px}
+.featured-img::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='19' y='19' width='2' height='2' fill='rgba(255,255,255,0.06)'/%3E%3C/svg%3E") repeat}
+.mini-card{position:relative;z-index:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:var(--rl);padding:28px;width:100%;max-width:300px;backdrop-filter:blur(2px)}
+.mini-card-label{font-family:var(--font-head);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(147,197,253,1);margin-bottom:12px}
+.mini-card-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.mini-card-row:last-child{border-bottom:none}
+.mini-card-date{font-family:var(--font-head);font-size:16px;font-weight:800;color:#fff}
+.mini-card-tag{font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:12px}
+.mini-card-tag.live{background:rgba(74,222,128,.18);color:#4ADE80}
+.mini-card-tag.wait{background:rgba(251,191,36,.18);color:#FBBF24}
+.mini-card-model{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:2px}
 .featured-content{padding:40px 44px;display:flex;flex-direction:column;justify-content:center}
 .post-cat{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-head);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:14px;width:fit-content}
 .cat-company{background:var(--sky);color:var(--blue)}
@@ -225,8 +233,22 @@ footer{background:#0d2147;border-top:4px solid #fff;padding:64px 0 0;color:rgba(
 
     <a href="blog-iphone-18-series-timeline.html" class="featured-post" data-cat="company">
       <div class="featured-img">
-        <div class="featured-img-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 2H7c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5 16c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
+        <div class="mini-card">
+          <div class="mini-card-label">iPhone 18 Sourcing Timeline</div>
+          <div class="mini-card-row">
+            <div>
+              <div class="mini-card-date">Sept 2026</div>
+              <div class="mini-card-model">iPhone 18 Pro / Pro Max</div>
+            </div>
+            <span class="mini-card-tag live">Open</span>
+          </div>
+          <div class="mini-card-row">
+            <div>
+              <div class="mini-card-date">Spring 2027</div>
+              <div class="mini-card-model">iPhone 18 / 18e</div>
+            </div>
+            <span class="mini-card-tag wait">Later</span>
+          </div>
         </div>
       </div>
       <div class="featured-content">
